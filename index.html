@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#1d212a">
+  <meta name="description" content="Play Pleat Street and Dog Bird Air Mail, two small browser games from TD Arcade.">
+  <title>TD Arcade</title>
+  <link rel="icon" type="image/png" href="./td-mark.png">
+  <style>
+    @font-face { font-family:Cabinet; src:url("./td-cabinet.woff") format("woff"); font-display:swap; }
+    @font-face { font-family:Barlow; src:url("./Barlow-Regular.woff") format("woff"); font-display:swap; }
+    * { box-sizing:border-box; }
+    html { color-scheme:dark; }
+    body { margin:0; min-height:100svh; background:#1d212a; color:#f7edcf; font:1.08rem/1.45 Barlow,system-ui,sans-serif; }
+    main { max-width:990px; margin:0 auto; padding:clamp(30px,8vh,82px) clamp(18px,4vw,46px) 36px; }
+    header { margin-bottom:clamp(22px,4.5vh,42px); padding-bottom:18px; border-bottom:2px solid #777262; display:flex; justify-content:space-between; align-items:flex-end; gap:12px; }
+    h1 { display:flex; align-items:center; gap:clamp(12px,2vw,24px); margin:0; font:400 clamp(2rem,5.2vw,3.75rem)/1 Cabinet,monospace; letter-spacing:-.03em; text-transform:uppercase; }
+    h1 span { display:inline-block; margin:4px; padding:5px 6px 4px; background:#f6d48a; color:#252831; outline:2px solid #f6d48a; outline-offset:3px; }
+    header p { margin:0; padding-bottom:3px; }
+    .shelf { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,3vw,32px); }
+    .game { --edge:#bb806c; --label:#ffcf90; --panel:#32262f; --button:#ffd292; --button-ink:#46303c; display:flex; flex-direction:column; text-decoration:none; color:#f9ecd4; border:2px solid var(--edge); background:var(--panel); box-shadow:4px 5px #12151e; overflow:hidden; }
+    .game.bird { --edge:#7fada6; --panel:#263e47; --button:#b5dcc3; --button-ink:#233e49; --label:#c2ead3; }
+    .game:focus-visible { outline:3px solid #fff3c7; outline-offset:5px; }
+    .game:hover,.game:focus-visible { border-color:var(--button); }
+    .game:hover .play,.game:focus-visible .play { background:#ffedc5; }
+    .game img { width:100%; height:auto; display:block; aspect-ratio:1.68; object-fit:cover; object-position:68% center; border-bottom:2px solid var(--edge); image-rendering:pixelated; }
+    .blurb { display:flex; flex-direction:column; align-items:flex-start; flex:1; padding:clamp(16px,2vw,24px); }
+    h2 { margin:0; color:var(--label); font:400 clamp(1.15rem,2.25vw,1.55rem)/1.2 Cabinet,monospace; text-transform:uppercase; }
+    .blurb p { margin:9px 0 19px; max-width:33ch; line-height:1.35; }
+    .play { margin-top:auto; display:inline-block; padding:9px 11px; color:var(--button-ink); background:var(--button); box-shadow:2px 3px #171c25; font:400 .875rem/1.15 Cabinet,monospace; text-transform:uppercase; }
+    @media(max-width:630px) {
+      main { max-width:450px; padding-top:28px; }
+      header { align-items:center; }
+      header p { font-size:.93rem; }
+      .shelf { grid-template-columns:1fr; }
+      .game img { aspect-ratio:2.35; object-position:70% 49%; }
+      .blurb { padding:15px 16px; }
+      .blurb p { margin:7px 0 13px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header><h1><span>TD</span> Arcade</h1><p>Choose a game.</p></header>
+  <div class="shelf">
+    <a class="game kitchen" href="./pleat-street.html">
+      <img src="./stall-pixels.png" alt="" width="512" height="288">
+      <div class="blurb"><h2>Pleat Street</h2><p>Three shifts at the dumpling stall. Cook solo or share a keyboard with a friend.</p><span class="play">Start cooking</span></div>
+    </a>
+    <a class="game bird" href="./dog-bird.html">
+      <img src="./flight-pixels.png" alt="" width="512" height="288">
+      <div class="blurb"><h2>Dog Bird Air Mail</h2><p>Fly a winged corgi through the Alps. One button keeps you in the air.</p><span class="play">Start flying</span></div>
+    </a>
+  </div>
+</main>
+</body>
+</html>
